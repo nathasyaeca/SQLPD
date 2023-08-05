@@ -1,0 +1,68 @@
+# An illegal site's servers were seized in a recent operation. Please submit all users' details.
+
+SELECT * FROM users;
+
+# A miling list of an illegal online service was sent to the SQLPD. Please submit all records' details.
+
+SELECT * FROM mailing_list;
+
+# A miling list of an illegal online service was sent to the SQLPD hot-line. Please submit all records
+# given names, number of kinds and join dates' details
+
+SELECT GivenName, NumberOfKids, Joined
+FROM mailing_list;
+
+# A miling list of an illegal online service was sent to the SQLPD hot-line. Please submit all enties
+# number of password changes, given names and join dates' details.
+
+SELECT PasswordChanges, GivenName, JoinDate
+FROM mailing_list;
+
+# White hat hacker has sent SQLPD exposed members' details of a shady site connected to various
+# persons of interest. Please submit all members password hashes' details. Please make sure there're no duplicates.
+
+SELECTSELECT DISTINCT PasswordHash
+FROM members;
+
+# White hat hacker has sent SQLPD exposed subscribers' details of a shady site connected to various
+# person of interest. Please submit all subscribers details sorted by password hashes in ascending order.
+
+SELECT * FROM subscribers
+ORDER BY PasswordHash;
+
+# White hat hacker has sent SQLPD exposed subscribers' details of a shady site connected to various persons
+# of interest. Please submit all subscribers' details sorted by password hashes in descending order.
+
+SELECT * FROM subscribers
+ORDER BY PasswordHash DESC;
+
+# White hat hacker has sent SQLPD exposed members' details of a shady site connected to various persons of
+# interest. Plese submit all members name and member since dates' details sorted by member since dates in descending
+# order. Please make sure there are no duplicates.
+
+SELECT DISTINCT Name, MemberSince
+FROM members
+ORDER BY MemberSince DESC;
+
+# An illegal site's servers were seized in a recent operation. Please submit all users number of posts
+# and access times' details sorted by number of posts in descending order and then by access times in descending order.
+
+SELECT NumberOfPosts, AccessTime
+FROM users
+ORDER BY NumberOfPosts DESC, AccessTime DESC;
+
+# An illegal site's servers were seized in a recent operation. Please submit the top 20 users' details when
+# sorted by email addresses in descending order and then by last access time in descending order.
+
+SELECT *
+FROM users
+ORDER BY EmailAddress DESC, LastAccess DESC
+LIMIT 20;
+
+# Please submit the top 10 user first names, access times and email addresses' details where sorted by first name in ascending
+# order and then by access times ind descending order. Please make sure there are no duplicates.
+
+SELECT DISTINCT FirstName, AccessTime, EmailAddress
+FROM users
+ORDER BY FirstName ASC, AccessTime DESC
+LIMIT 10;
